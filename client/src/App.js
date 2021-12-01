@@ -3,8 +3,6 @@ import {
   ApolloClient,
   InMemoryCache,
   ApolloProvider,
-  useQuery,
-  gql
 } from "@apollo/client";
 import BookList from './BookList'
 import AddBook from './AddBook';
