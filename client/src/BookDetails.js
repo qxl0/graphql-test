@@ -4,7 +4,7 @@ import { getBook } from './queries/query';
 
 
 function BookDetails(props) {
-  console.log(props);
+
   let displayBookDetails = () => {
     const book = props.data.book;
     if (book){
@@ -14,21 +14,20 @@ function BookDetails(props) {
           <p>{book.genre}</p>
           <p>{book.author.name}</p>
           <p>All books by this author:</p>
-          <ul className="other-books">
+          <ul className="other-books" id="other-books">
             {book.author.books.map(item => {
-              return <li key={item.id}>{item.name}</li>
+              return <li style={{color: 'white', border: 'none' }} className="other-books-li" key={item.id}>{item.name}</li>
             })}
           </ul>
 
         </div>
       )
     } else {
-      <div>No book selected</div>
+      return <div>No book selected</div>
     }
   }
   return (
     <div id="book-details">
-      <p>Book Details Here</p> 
       {displayBookDetails()}
     </div>
   )
